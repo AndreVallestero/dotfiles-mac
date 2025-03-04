@@ -1,0 +1,90 @@
+/* ~/Library/KeyBindings/DefaultKeyBinding.Dict
+
+This file remaps the key bindings of a single user on Mac OS X 10.5 to more
+closely match default behavior on Windows systems. Recommend also rebinding Globe to Control
+
+Here is a rough cheatsheet for syntax.
+Key Modifiers
+^ : Ctrl
+$ : Shift
+~ : Option (Alt)
+@ : Command (Apple)
+# : Numeric Keypad
+
+Non-Printable Key Codes
+
+Standard
+Up Arrow:     \UF700        Backspace:    \U0008        F1:           \UF704
+Down Arrow:   \UF701        Tab:          \U0009        F2:           \UF705
+Left Arrow:   \UF702        Escape:       \U001B        F3:           \UF706
+Right Arrow:  \UF703        Enter:        \U000A        ...
+Insert:       \UF727        Page Up:      \UF72C
+Delete:       \UF728        Page Down:    \UF72D
+Home:         \UF729        Print Screen: \UF72E
+End:          \UF72B        Scroll Lock:  \UF72F
+Break:        \UF732        Pause:        \UF730
+SysReq:       \UF731        Menu:         \UF735
+Help:         \UF746
+
+OS X
+delete:       \U007F
+
+For a good reference see http://osxnotes.net/keybindings.html.
+
+NOTE: typically the Windows 'Insert' key is mapped to what Macs call 'Help'.
+Regular Mac keyboards don't even have the Insert key, but provide 'Fn' instead,
+which is completely different.
+*/
+
+{
+    "@\UF72B"  = "moveToEndOfDocument:";                         /* Command  + End   */
+    "~@\UF703" = "moveToEndOfDocument:";                         /* Command + Option + Right Arrow */
+
+    "@$\UF72B" = "moveToEndOfDocumentAndModifySelection:";       /* Shift + Command  + End */
+
+    "@\UF729"  = "moveToBeginningOfDocument:";                   /* Command  + Home  */
+    "~@\UF702" = "moveToBeginningOfDocument:";                   /* Command + Option + Left Arrow */
+
+    "@$\UF729" = "moveToBeginningOfDocumentAndModifySelection:"; /* Shift + Command  + Home */
+
+    "\UF729"   = "moveToBeginningOfLine:";                       /* Home         */
+    "~\UF702"  = "moveToBeginningOfLine:";                       /* Option + Left Arrow */
+
+    "$\UF729"  = "moveToBeginningOfLineAndModifySelection:";     /* Shift + Home */
+    "$~\UF702" = "moveToBeginningOfLineAndModifySelection:";     /* Shift + Option + Right Arrow */
+
+    "\UF72B"   = "moveToEndOfLine:";                             /* End          */
+    "~\UF703"  = "moveToEndOfLine:";                             /* Option + Right Arrow */
+
+    "$\UF72B"  = "moveToEndOfLineAndModifySelection:";           /* Shift + End  */
+    "$~\UF703" = "moveToEndOfLineAndModifySelection:";           /* Shift + Option + Left Arrow  */
+
+    "\UF72C"   = "pageUp:";                                      /* PageUp       */
+    "\UF72D"   = "pageDown:";                                    /* PageDown     */
+    "$\UF728"  = "cut:";                                         /* Shift + Del  */
+    "$\UF727"  = "paste:";                                       /* Shift + Ins */
+    "@\UF727"  = "copy:";                                        /* Command  + Ins  */
+    "$\UF746"  = "paste:";                                       /* Shift + Help */
+    "@\UF746"  = "copy:";                                        /* Command  + Help (Ins) */
+
+    "@x"  = "cut:";                                              /* Command + X  */
+    "@v"  = "paste:";                                            /* Command + V */
+    "@c"  = "copy:";                                             /* Command + C */
+    "@z"  = "undo:";                                             /* Command + Z */
+    "@$z"  = "redo:";                                             /* Command + Shift + Z */
+    "@a"  = "selectAll:";                                             /* Command + A */
+
+    "@~i"      = ("moveUp:","moveUp:","moveUp:","moveUp:","moveUp:","moveUp:","moveUp:","moveUp:",);                            /* Command + Option + j */
+    "@~k"      = ("moveDown:","moveDown:","moveDown:","moveDown:","moveDown:","moveDown:","moveDown:","moveDown:",);                            /* Command + Option + j */
+
+    "@\UF702"  = "moveWordBackward:";                            /* Command  + LeftArrow */
+    "@~j"      = "moveWordBackward:";                            /* Command + Option + j */
+    "@\U007F"  = "deleteWordBackward:";                          /* Command  + Backspace */
+
+    "@\UF703"  = "moveWordForward:";                             /* Command  + RightArrow */
+    "@~l"      = "moveWordForward:";                             /* Command + Option + l */
+    "@\UF728"  = "deleteWordForward:";                           /* Command  + Delete */
+
+    "@$\UF702" = "moveWordBackwardAndModifySelection:";          /* Shift + Command  + Leftarrow */
+    "@$\UF703" = "moveWordForwardAndModifySelection:";           /* Shift + Command  + Rightarrow */
+}
