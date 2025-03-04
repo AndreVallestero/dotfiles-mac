@@ -1,7 +1,14 @@
 /* ~/Library/KeyBindings/DefaultKeyBinding.Dict
 
 This file remaps the key bindings of a single user on Mac OS X 10.5 to more
-closely match default behavior on Windows systems. Recommend also rebinding Globe to Control
+closely match default behavior on Windows systems.
+
+To mimic windows as closely as possible remap:
+  
+- ctrl -> command
+- option -> control
+- command -> option
+- globe -> command
 
 Here is a rough cheatsheet for syntax.
 Key Modifiers
