@@ -3,7 +3,7 @@ if [[ $(uname -m) == 'arm64' ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
 else
   # Write hints to STDERR, instead of STDOUT. STDOUT may break other commands.
-  >&2 echo "WARNING You are not using arm64 architecture, most Robinhood tools won't work."
+  >&2 echo "WARNING You are not using arm64 architecture."
   >&2 echo "Your arch is: $(uname -m)".
   >&2 echo "Your default shell is: $(dscl . -read ~/ UserShell)".
   >&2 echo "This should be /bin/zsh or /opt/homebrew/bin/bash".
